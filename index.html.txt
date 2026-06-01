@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Special Gift 🎁</title>
+
+<style>
+
+body{
+    background:#FFE5E5;
+    font-family:Arial;
+    text-align:center;
+    padding-top:50px;
+}
+
+h1{
+    color:#ff5e78;
+}
+
+button{
+    background:#ff7a7a;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:20px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#message{
+    font-size:40px;
+    margin-top:20px;
+    animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+
+0%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-15px);
+}
+
+100%{
+    transform:translateY(0);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img src="https://media.tenor.com/To6Xr3M4jX8AAAAi/bear-love.gif"
+width="250">
+
+<h1>🐻 Hi Cutie!</h1>
+
+<p>I have a special gift for you 🎁</p>
+
+<div id="gift" style="font-size:100px;">
+🎁
+</div>
+
+<button onclick="showGift()">Open Gift 🎁</button>
+
+<h2 id="message"></h2>
+
+<script>
+
+<script>
+
+function showGift(){
+
+    document.getElementById("gift").innerHTML = "💩";
+
+    document.getElementById("message").innerHTML =
+    "GUU KHAAA 😂❤️";
+
+}
+
+</script>
+
+</body>
+</html>
