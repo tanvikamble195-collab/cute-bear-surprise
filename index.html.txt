@@ -1,19 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Special Gift 🎁</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Gift For You 🐻</title>
 
 <style>
 
 body{
+    margin:0;
     background:#FFE5E5;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
     text-align:center;
-    padding-top:50px;
+    overflow:hidden;
+}
+
+.container{
+    margin-top:50px;
 }
 
 h1{
     color:#ff5e78;
+}
+
+p{
+    color:#555;
+    font-size:20px;
+}
+
+#gift{
+    font-size:100px;
+    margin:20px;
+    transition:0.5s;
 }
 
 button{
@@ -26,60 +44,94 @@ button{
     cursor:pointer;
 }
 
+button:hover{
+    transform:scale(1.05);
+}
+
 #message{
-    font-size:40px;
+    font-size:35px;
     margin-top:20px;
+    color:#ff3366;
     animation:bounce 1s infinite;
 }
 
 @keyframes bounce{
-
-0%{
-    transform:translateY(0);
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
 }
 
-50%{
-    transform:translateY(-15px);
+.heart{
+    position:absolute;
+    color:red;
+    font-size:25px;
+    animation:float 5s linear infinite;
 }
 
-100%{
-    transform:translateY(0);
-}
-
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
 }
 
 </style>
-
 </head>
 
 <body>
 
-<img src="https://media.tenor.com/To6Xr3M4jX8AAAAi/bear-love.gif"
-width="250">
+<div class="container">
 
-<h1>🐻 Hi Cutie!</h1>
+<h1>🐻 Hi Cutie! 🐻</h1>
 
-<p>I have a special gift for you 🎁</p>
+<p>I have a special gift for you 🎁💖</p>
 
-<div id="gift" style="font-size:100px;">
-🎁
-</div>
+<div id="gift">🎁</div>
 
 <button onclick="showGift()">Open Gift 🎁</button>
 
 <h2 id="message"></h2>
 
-<script>
+</div>
 
 <script>
 
 function showGift(){
 
-    document.getElementById("gift").innerHTML = "💩";
+    document.getElementById("gift").innerHTML="💩";
+    document.getElementById("gift").style.transform="scale(1.3)";
 
-    document.getElementById("message").innerHTML =
-    "GUU KHAAA 😂❤️";
+    document.getElementById("message").innerHTML=
+    "🥺 I have something important to tell you...<br><br>❤️ I've been thinking about this for months...<br><br>💩 GUU KHAAA 💩😂❤️";
 
+    createHearts();
+}
+
+function createHearts(){
+
+    for(let i=0;i<30;i++){
+
+        let heart=document.createElement("div");
+
+        heart.innerHTML="❤️";
+
+        heart.className="heart";
+
+        heart.style.left=Math.random()*100+"vw";
+
+        heart.style.animationDuration=
+        (Math.random()*3+2)+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },5000);
+    }
 }
 
 </script>
